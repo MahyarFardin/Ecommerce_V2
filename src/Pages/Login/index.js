@@ -238,7 +238,7 @@ const Login = () => {
 						z-40 
 						mt-[250px] 
 						
-						${isFlipped ? "ml-[550px]" : "ml-[-47px]"}
+						${isFlipped ? "ml-[550px]" : "ml-[-48px]"}
 						`}
 					></button>
 				</div>
