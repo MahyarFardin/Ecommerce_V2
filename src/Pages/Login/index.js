@@ -218,7 +218,7 @@ const Login = () => {
 				<div
 					className={`
 				Pics
-				w-[600px]
+				w-[565px]
 				bg-[purple] 
 				shrink-0 
 				p-[20px] 
@@ -238,7 +238,7 @@ const Login = () => {
 						z-40 
 						mt-[250px] 
 						
-						${isFlipped ? "ml-[550px]" : "ml-[-48px]"}
+						${isFlipped ? "ml-[518px]" : "ml-[-47px]"}
 						`}
 					></button>
 				</div>
