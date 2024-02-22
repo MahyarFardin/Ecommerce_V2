@@ -1,13 +1,33 @@
+services:
+  front:
+    build: ./front
+    container_name: frontend
+    ports: 
+      - 3000:3000
+    stdin_open: true
+    volumes:
+      - ./frontend:/app
+      - node_modules
 
-front:
-  build: ./front
-  container_name: frontend
-  ports: 
-    - "3000:3000"
-  volumes:
-    - ./front:/app
-    - ./app/node_modules
-  stdin_open: true
-  tty: true
+  back:
+    build: ./back
+    container_name: backend
+    environment:
+      DB_UR: mongodb://db/ecommerce
+    ports:
+      - 5000:5000
+    volumes:
+      - ./backend:/app
+      - node_modules
 
+  db:
+    image: mongo:latest
+    ports:
+      - 27017:21017
+    volumes:
+      - ./data:/data/db
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
 
